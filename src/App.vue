@@ -31,10 +31,13 @@ export default {
   methods: {
     //promoises
     async fetchuniversities() {
-      const res = await fetch("http://localhost:5555/universitiesList");
+     const res = await fetch(
+        "https://sravani-ganipisetti-uq7x.onrender.com/api "
+      );
       const data = await res.json();
+      const universitiesData = data.universitiesList || [];
       console.log(data);
-      return data;
+      return universitiesData;
     },
   },
   async created() {
